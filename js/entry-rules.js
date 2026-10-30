@@ -19,7 +19,7 @@
 'use strict';
 const G = 'xy-home-v2';
 const K_PASS = 'rules-notice-pass';
-const RULES_VER = '2026-10-22c';
+const RULES_VER = '2026-10-30b';
 const IS_AUTOMATION = (typeof navigator !== 'undefined') &&
 (navigator.webdriver === true || /Headless/i.test(String(navigator.userAgent)));
 function gGet(k) {
@@ -95,7 +95,7 @@ ckSet(RULES_VER);                     // ① cookie
 gSet(K_PASS, val);                    // ② 内存 + LS（xyStore 会同时写 IDB）
 try { if (!window.xyStore && window.idbSet) window.idbSet(G + ':' + K_PASS, val); } catch (e) {}
 }
-const RULE_PARA1 = '本站是个人维护的免费站点。为了维护良好的使用体验，请遵守以下基本规则：分享链接需注明作者署名，禁止将本站与其他站点进行对比拉踩，禁止泄露问卷答案和开屏密码。';
+const RULE_PARA1 = '本站是个人维护的免费站点。为了维护良好的使用体验，请遵守以下基本规则：2026.10.30 起禁止二传本站链接与代码库链接——任何形式的传播都算二传（分享到公开平台、转发到群聊、私发他人），链接只能自己留着、自己用，需要链接请到作者本人主页（抖音 @言序 58334080131、小红书 @言序 1842523578）获取；二改 mochi 原网站后要公开（部署到公网给别人用、发帖公开等）必须先经作者同意，自己私人二改、不公开使用不用问；转载字卡内容需注明作者署名，禁止将本站与其他站点进行对比拉踩，禁止泄露问卷答案和开屏密码。';
 const RULE_PARA2 = '可能很多人觉得免费就不该有规矩。但这是个人花心血做的同好自留地。任何圈子，人一多、风气一杂，原本那种安静稳定的体验就毁了。规则和门槛的存在，只是为了保护正常使用的人能有个好环境。如果觉得规矩多、嫌麻烦，说明这里可能不适合你，大家双向选择就好。继续即视为接受。';
 const QUESTIONS = [
 { q: '这个网站免费给你用，但它是作者花钱花时间做的。你平时会怎么使用？',
